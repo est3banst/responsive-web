@@ -248,6 +248,15 @@ h2 {
     z-index: 100;
     border: .3px solid #0E1822;
 }
+.third-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.third-section i {
+    margin: 3px 8px;
+}
 .furniture-designs {
     width: 90%;
     height: 500px;
@@ -276,7 +285,10 @@ h2 {
     position: relative;
     overflow: hidden;
 }
-
+h3 {
+    border-bottom: .5px solid #0E1822;
+    padding: 8px 9px;
+}
 .decks-pergs-designs img:first-child {
     z-index: 250;
 }
