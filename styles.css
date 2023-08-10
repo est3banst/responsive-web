@@ -2,9 +2,11 @@
     --first-color: #f5dd7b;
     --second-color: #fde994;
     --third-color: #83580b;
+    --fourth-color: #F7F8F8;
 }
 * {
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 .nav-header {
     display: flex;
@@ -17,6 +19,8 @@
 
 .heading-1 {
     align-self: center;
+    font-size: 1.9rem;
+    font-weight: bolder;
     font-family: 'Poppins', sans-serif;
     padding: 6px 9px;
 }
@@ -224,13 +228,14 @@
     margin: 5rem .4rem;
     position: relative;
     padding: .3rem 1.2rem;
-    background: #F7F8F8;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #F7F8F8, var(--second-color));  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #F7F8F8, var(--second-color)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #F7F8F8;  
+    background: -webkit-linear-gradient(to right, var(--fourth-color), var(--second-color));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--fourth-color), var(--second-color)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 h2 {
     font-weight: bold;
+    text-align: center;
 }
 .heading-section { 
     font-size: clamp(.8rem, 1rem, 1.2rem);
@@ -246,11 +251,13 @@ h2 {
     align-items:center;
     background: #F7F8F8;
     z-index: 100;
+    margin: 2rem 4px;
     border: .3px solid #0E1822;
 }
 .third-section {
     width: 80%;
-    margin: 10px auto;
+    margin: 35px auto;
+    padding: 3rem .5rem;
 }
 .container-gallery, .container-decks {
     height: 60vh;
@@ -275,8 +282,12 @@ h2 {
 
 h3 {
     border-bottom: .5px solid #0E1822;
-    padding: 8px 9px;
+    padding: 2px 4px;
+    color: #fff;
     text-align: center;
+}
+h3:hover {
+  color: #000000;
 }
 .sliders {
     display: flex;
@@ -301,16 +312,9 @@ h3 {
 }
 .footer-container {
     width: 80%;
-    height: 20vh;
+    text-align: center;
     background-color: var(--second-color);
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: .9rem;
-}
-.footer-div {
-    margin: 0 auto;
-
 }
 .contact-now {
     background: var(--second-color-color);
@@ -332,18 +336,80 @@ h3 {
     transform: translate(0.05em, 0.05em);
     box-shadow: 0.05em 0.05em;
   }
+  .ad-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+  .to-animate {
+    border-radius: 0.75em;
+    font-size: 18px;
+    margin-bottom: 1rem;
+    width: fit-content;
+    padding: 0 .3rem;
+    font-weight: bold;
+    box-shadow: 6px 6px 0px black;
+    background: var(--first-color);
+    transform: translateX(0px) translateY(0px);
+    animation: animateDeck 1s infinite ease-in-out .5s;
+  }
+  @keyframes animateDeck {
+    20% {
+      transform: translateX(-1px) translateY(-1px);
+      color: #fff;
+    }
+    100% {
+      transform: translateX(-6px) translateY(-6px);
+      color: #0E1822;
+    }
+  }
  .anchor {
     color: #37ec5e;
     margin: 3.2px 4.5px;
     padding: 2px 6px;
  }
- .last-section {
-    width: 100%;
+ .container-last-section {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+ }
+ .last-section {
+    width: 80%;
     flex-direction: column;
+    margin: .3rem 5px;
+ }
+ .last-section p {
+    padding: 6px .5rem;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    background: -webkit-linear-gradient(to right, var(--fourth-color), var(--second-color));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--fourth-color), var(--second-color)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-top: .5px solid #0E1822;
+ }
+ .last-section article {
+    margin: .4rem 0;
+    font-weight: bold;
  }
  .last-section small {
+    background-color: #0E1822;
+    color: #fff;
+    padding: .4rem .2rem;
     margin: 15% 15px;
+ }
+ .last-icons {
+    display: flex;
+    justify-content: center;
+ }
+ .last-icons i {
+    padding: 2px .6rem;
+ }
+ @media only screen and (width > 800px) {
+    .third-section img {
+      flex: 1 0 80%;
+      overflow-x: hidden;
+    }
+    .third-section div {
+      gap: 1.5rem;
+    }
  }
